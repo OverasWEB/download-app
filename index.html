@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unduh Aplikasi Kami</title>
+    <link rel="icon" href="mask.ico" type="image/x-icon">
+    <style>
+        /* Reset styling default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gaya body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Gaya container */
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        /* Gaya heading */
+        h1 {
+            color: #00796b;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        /* Gaya paragraf */
+        p {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Gaya tombol unduh */
+        .download {
+            display: inline-block;
+            background-color: #00796b;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 30px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .download:active {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Selamat Datang di Aplikasi Kami!</h1>
+        <p>Anda dapat mengunduh aplikasi kami dengan menekan tombol di bawah ini. Nikmati fitur-fitur terbaru dan
+            tingkatkan pengalaman Anda!</p>
+        <a href="calis.apk" class="download" download id="downloadButton">Unduh Sekarang</a>
+    </div>
+
+    <script>
+        // Ambil elemen tombol unduh
+        const downloadButton = document.getElementById('downloadButton');
+
+        // Tambahkan event listener untuk klik tombol
+        downloadButton.addEventListener('click', function (event) {
+            // Tampilkan konfirmasi alert
+            const userConfirmed = confirm('Apakah Anda yakin ingin mengunduh aplikasi ini?');
+
+            // Jika pengguna membatalkan, hentikan tindakan unduh
+            if (!userConfirmed) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
